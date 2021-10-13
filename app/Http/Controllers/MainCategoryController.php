@@ -23,6 +23,9 @@ class MainCategoryController extends Controller
     public function storeMCategory(Request $request)
     {
 
+      $request->validate([
+        'mcategory_title'=>'required',
+      ]);
       $mcategory_title = $request->mcategory_title;
       $status = $request->status;
 

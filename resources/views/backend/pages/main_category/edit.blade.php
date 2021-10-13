@@ -56,7 +56,7 @@
           <input type="hidden" name="id" value="{{$mcategory->id}}">
             <div class="form-group">
               <label for="categorytitle">Category Title</label>
-              <input type="text" class="form-control" name="mcategory_title" aria-describedby="categorytitle" value="{{$mcategory->mcategory_title}}" placeholder="Enter title">
+              <input data-validation="required" type="text" class="form-control" name="mcategory_title" aria-describedby="categorytitle" value="{{$mcategory->mcategory_title}}" placeholder="Enter title">
 
             </div>
 

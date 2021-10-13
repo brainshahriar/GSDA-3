@@ -36,7 +36,7 @@
 	<![endif]-->
 
 	<!-- All PLUGINS CSS ============================================= -->
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/assets.css')}}">
+	{{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/assets.css')}}"> --}}
 
 	<!-- TYPOGRAPHY ============================================= -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/typography.css')}}">
@@ -74,11 +74,11 @@
                 <div class="input-group">
                   <label for="name">Your Name</label>
 
-                  <input  id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                  <input  id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"  autocomplete="name" autofocus>
 
                   @error('name')
                       <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
+                          <strong style="color: red">{{ $message }}</strong>
                       </span>
                   @enderror
                 </div>
@@ -88,10 +88,10 @@
               <div class="form-group">
                 <div class="input-group">
                   <label for="email">Your Email Address</label>
-                  <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autocomplete="email">
+                  <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"  autocomplete="email">
                   @error('email')
                       <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
+                          <strong style="color: red">{{ $message }}</strong>
                       </span>
                   @enderror
                 </div>
@@ -101,10 +101,10 @@
               <div class="form-group">
                 <div class="input-group">
                   <label for="phone">Your Mobile Number</label>
-                  <input id="phone" type="number" class="form-control" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
+                  <input id="phone" type="number" class="form-control" name="phone" value="{{ old('phone') }}"  autocomplete="phone">
                   @error('phone')
                       <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
+                          <strong style="color: red">{{ $message }}</strong>
                       </span>
                   @enderror
                 </div>
@@ -114,10 +114,10 @@
               <div class="form-group">
                 <div class="input-group">
                   <label for="password">Your Password</label>
-                  <input id="password" type="password" class="form-control" name="password" required autocomplete="new-password">
+                  <input id="password" type="password" class="form-control" name="password"  autocomplete="new-password">
                   @error('password')
                       <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
+                          <strong style="color: red">{{ $message }}</strong>
                       </span>
                   @enderror
                 </div>
@@ -127,10 +127,10 @@
               <div class="form-group">
                 <div class="input-group">
                   <label for="password">Confirm Password</label>
-                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation"  autocomplete="new-password">
                   @error('password')
                       <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
+                          <strong style="color: red">{{ $message }}</strong>
                       </span>
                   @enderror
                 </div>
@@ -172,7 +172,7 @@
 <script src="{{ asset('vendors/owl-carousel/owl.carousel.js')}}"></script>
 <script src="{{ asset('js/functions.js')}}"></script>
 <script src="{{ asset('js/contact.js')}}"></script>
-<script src="{{ asset('vendors/switcher/switcher.js')}}"></script>
+{{-- <script src="{{ asset('vendors/switcher/switcher.js')}}"></script> --}}
 </body>
 
 </html>

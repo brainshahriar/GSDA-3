@@ -14,18 +14,18 @@
 
             <div class="form-group">
               <label for="classroom_course_title">Blog Title</label>
-              <input type="text" class="form-control" name="blogs_title" aria-describedby="blogs_title" value="{{$row->blogs_title}}" placeholder="Enter title">
+              <input data-validation="required" type="text" class="form-control" name="blogs_title" aria-describedby="blogs_title" value="{{$row->blogs_title}}" placeholder="Enter title">
 
             </div>
             <div class="form-group">
               <label class="col-form-label">Short Description</label>
               <div>
-                <textarea class="form-control" name="short_description"> </textarea>
+                <textarea data-validation="required" class="form-control" name="short_description" > </textarea>
               </div>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlFile1">Blogs Image</label>
-                  <input type="file" name="image" class="form-control-file" id="blogs_image" onchange="previewImage(this)">
+                  <input data-validation="required" type="file" name="image" class="form-control-file" id="blogs_image" onchange="previewImage(this)">
 
                 </div>
 

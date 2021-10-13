@@ -57,17 +57,17 @@
                   @csrf
                     <div class="form-group">
                       <label for="categorytitle">Category Title</label>
-                      <input type="text" class="form-control" name="mcategory_title" aria-describedby="categorytitle" placeholder="Enter title">
+                      <input data-validation="required" type="text" class="form-control" name="mcategory_title" aria-describedby="categorytitle" placeholder="Enter title">
 
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlFile1">Category Image</label>
-                          <input type="file" name="file" class="form-control-file" id="image" onchange="previewImage(this)">
+                          <input data-validation="required" type="file" name="file" class="form-control-file" id="image" onchange="previewImage(this)">
                     </div>
 
                     <div class="form-group">
                       <label for="custom select">Status</label>
-                      <select class="form-control" name="status">
+                      <select class="form-control" name="status" >
 
                         <option value="active">Active</option>
                         <option value="inactive">Inactive</option>

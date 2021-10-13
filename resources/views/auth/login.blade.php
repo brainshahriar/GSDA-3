@@ -36,7 +36,7 @@
 	<![endif]-->
 
 	<!-- All PLUGINS CSS ============================================= -->
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/assets.css')}}">
+	{{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/assets.css')}}"> --}}
 
 	<!-- TYPOGRAPHY ============================================= -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/typography.css')}}">
@@ -78,7 +78,7 @@
 
                   @error('email')
                       <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
+                          <strong style="color: red">{{ $message }}</strong>
                       </span>
                   @enderror
                 </div>
@@ -101,12 +101,7 @@
             </div>
             <div class="col-lg-12">
               <div class="form-group form-forget">
-                <div class="custom-control custom-checkbox">
-
-                  <input class="custom-control-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                  <label class="custom-control-label" for="remember">Remember me</label>
-
-                </div>
+   
                   @if (Route::has('password.request'))
                 <a href="{{ route('password.request') }}" class="ml-auto">Forgot Password?</a>
                 @endif
@@ -149,7 +144,7 @@
 <script src="{{ asset('vendors/owl-carousel/owl.carousel.js')}}"></script>
 <script src="{{ asset('js/functions.js')}}"></script>
 <script src="{{ asset('js/contact.js')}}"></script>
-<script src="{{ asset('vendors/switcher/switcher.js')}}"></script>
+
 <script type="text/javascript" src="{{ asset('backend') }}/lib/toastr/toastr.min.js"></script>
 
 <script>

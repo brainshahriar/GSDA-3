@@ -84,6 +84,12 @@ class LoginController extends Controller
       $this->registerOrLoginUser($user);
       return redirect()->route('home-user');
     }
+    public function handleGoogleCallback1()
+    {
+      $user = Socialite::driver('google')->user();
+      $this->registerOrLoginUser($user);
+      return redirect()->route('home-user');
+    }
 
     public function redirectToFacebook()
     {

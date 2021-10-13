@@ -93,7 +93,7 @@
 
 
                 <td>
-                  <a href="/admin/home/blogs/details/{{$row->id}}"><i class="fas fa-file-upload"></i></a>
+                  <a href="/admin/home/blogs/details/{{$row->id}}" title="upload"><i class="fas fa-file-upload"></i></a>
                   <a href="#" data-toggle="modal" data-target="#BlogsEditModal{{$row->id}}"><i class="fas fa-edit"></i></a>
 
 

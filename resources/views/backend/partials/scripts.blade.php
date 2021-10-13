@@ -29,6 +29,12 @@
 <script src="{{asset('admin/summernote/js/summernote.min.js')}}"></script>
 <script src="{{ asset('backend') }}/lib/sweetalert/sweetalert.min.js"></script>
 <script src="{{ asset('backend') }}/lib/sweetalert/code.js"></script>
+<script type="text/javascript" src="{{ asset('common' )}}/jquery.form-validaton-min.js"></script>
+<script>
+    $.validate({
+        lang:'en'
+    });
+</script>
 <script type="text/javascript" src="{{ asset('backend') }}/lib/toastr/toastr.min.js"></script>
 
 <script>

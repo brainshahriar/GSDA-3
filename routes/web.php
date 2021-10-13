@@ -276,6 +276,7 @@ middleware('is_admin');
 //socialite login Routes
 Route::get('login/google', [LoginController::class,'redirectToGoogle'])->name('login.google');
 Route::get('login/google/callback', [LoginController::class,'handleGoogleCallback']);
+Route::get('login/google/callback1', [LoginController::class,'handleGoogleCallback1']);
 
 Route::get('login/facebook', [LoginController::class,'redirectToFacebook'])->name('login.facebook');
 Route::get('login/facebook/callback', [LoginController::class,'handleFacebookCallback']);

@@ -25,7 +25,7 @@
             <div class="form-group">
               <label class="col-form-label">Sub Title Description</label>
               <div>
-                <textarea class="form-control" id="sub_title_description" name="sub_title_description"> </textarea>
+                <textarea required class="form-control" id="sub_title_description" name="sub_title_description"> </textarea>
               </div>
             </div>
 
@@ -44,7 +44,7 @@
             <div class="form-group">
               <label class="col-form-label">Blog Details Content</label>
               <div>
-                <textarea class="form-control" id="blog_details_content" name="blog_details_content"> </textarea>
+                <textarea required class="form-control" id="blog_details_content" name="blog_details_content"> </textarea>
               </div>
             </div>
 

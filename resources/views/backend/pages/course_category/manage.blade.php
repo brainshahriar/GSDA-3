@@ -57,7 +57,7 @@
                   @csrf
                     <div class="form-group">
                       <label for="categorytitle">Category Title</label>
-                      <input type="text" class="form-control" name="mcategory_title" aria-describedby="categorytitle" placeholder="Enter title">
+                      <input data-validation="required" type="text" class="form-control" name="mcategory_title" aria-describedby="categorytitle" placeholder="Enter title">
 
                     </div>
 
