@@ -123,6 +123,12 @@
                           <span class="ttr-label">Review</span>
                         </a>
                     </li>
+                    <li>
+                      <a href="{{ route('trainer') }}" class="ttr-material-button" @yield('trainer')>
+                        <span class="ttr-icon"><i class="ti-comments"></i></span>
+                                <span class="ttr-label">Trainer List</span>
+                              </a>
+                          </li>
 
       </ul>
       <!-- sidebar menu end -->
