@@ -273,10 +273,9 @@
 
            <div class="" id="instructor">
             <h4>Instructor</h4>
-       
+  
             @foreach ($trainer as $item)
-                
-           
+
             <div class="instructor-bx">
               <div class="instructor-author">
                 <img src=""{{asset('storage/trainer/'.$item->image)}}"" alt="">
@@ -368,7 +367,6 @@
 
                     </form><!-- /.cnt-form -->
                     @foreach ($courseReview as $review)
-
 
                     <div class="product-reviews">
 											<h5 class="title">{{ $review->user->name }}</h5>

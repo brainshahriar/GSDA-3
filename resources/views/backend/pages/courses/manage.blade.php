@@ -101,20 +101,7 @@
 
                       </select>
                     </div>
-                    <div class="form-group">
-                      <label for="custom select">Select Trainer</label>
-                      <select class="form-control" name="trainer_id">
-                        <option label="Choose Instructor"></option>
-                        <?php foreach ($trainer as $item): ?>
-                          <option value="{{$item->id}}">{{$item->name}}</option>
-
-                        <?php endforeach; ?>
-
-
-
-
-                      </select>
-                    </div>
+     
                     <div class="form-group">
                       <label for="regular_price">Regular Price</label>
                       <input type="number" class="form-control" name="regular_price" aria-describedby="regular_price" placeholder="Enter Price">
@@ -177,7 +164,7 @@
 
                   <span class="font-weight-bold">{{$row->course_title}}</span>
                 </td>
-                <td>{{ $row->trainer->name }}</td>
+                <td></td>
                 <td>
                   <div class="avatar-group">
                     <div

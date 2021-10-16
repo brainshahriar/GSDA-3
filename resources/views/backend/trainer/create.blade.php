@@ -32,6 +32,7 @@
               <tr>
                 <th class="wd-10">Id</th>
                 <th>Name</th>
+                <th>Course</th>
                 <th class="wd-10">Designation</th>
                 <th>Fb Link</th>
                 <th>Lindin Link</th>
@@ -48,6 +49,9 @@
                 <td class="user_name">
                     {{$row->name}}
 
+                </td>
+                <td>
+                 
                 </td>
 
                 <td>
@@ -91,7 +95,7 @@
                   <a  href="/admin/trainer-delete/{{$row->id}}" id="delete"><i class="fas fa-trash"></i></a>
                  
                 </td>
-                @include('backend.modals.trainereditmodal')
+                @include('backend.modals.trainereditmodal') 
   
 
               </tr>

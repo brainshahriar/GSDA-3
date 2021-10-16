@@ -38,7 +38,7 @@ class CourseController extends Controller
   {
     $main_category_id = $request->main_category_id;
     $course_category_id = $request->course_category_id;
-    $trainer_id=$request->trainer_id;
+  
 
     $course_title=$request->course_title;
     $regular_price=$request->regular_price;
@@ -64,7 +64,7 @@ class CourseController extends Controller
     $course = new Course();
     $course->main_category_id = $main_category_id;
     $course->course_category_id =$course_category_id;
-    $course->trainer_id=$trainer_id;
+  
 
     $course->course_title=$course_title;
     $course->regular_price=$regular_price;
@@ -91,7 +91,7 @@ class CourseController extends Controller
   {
     $main_category_id = $request->main_category_id;
     $course_category_id= $request->course_category_id;
-    $trainer_id=$request->trainer_id;
+   
 
     $course_title=$request->course_title;
     $regular_price= $request->regular_price;
@@ -137,7 +137,7 @@ class CourseController extends Controller
     $course = Course::find($request->id);
     $course->main_category_id = $main_category_id;
     $course->course_category_id= $course_category_id;
-    $course->trainer_id=$trainer_id;
+  
 
     $course->course_title= $course_title;
     $course->regular_price= $regular_price;
@@ -327,10 +327,7 @@ class CourseController extends Controller
     $avgRating = number_format($rating,1);
 
 
-
-    $trainer= Trainer::where('id',$id+1)->get();
-
-
+    $trainer= Trainer::where('course_id',$id)->get();
     return view('/backend/pages/courses.course_details_index',compact('course_details','main_categories','course_categories','course','enrolled','courseReview','avgRating','trainer'));
   }
 

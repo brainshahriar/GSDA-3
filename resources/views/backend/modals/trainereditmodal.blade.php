@@ -17,6 +17,20 @@
   
               </div>
               <div class="form-group">
+                <label for="custom select">Select Course</label>
+                <select class="form-control" name="course_id">
+                  <option label="Choose Course"></option>
+                  <?php foreach ($course as $item): ?>
+                    <option value="{{$item->id}}">{{$item->course_title}}</option>
+
+                  <?php endforeach; ?>
+
+
+
+
+                </select>
+              </div>
+              <div class="form-group">
                 <label class="col-form-label">Designation</label>
                 <div>
                   <input  class="form-control" value="{{ $row->designation }}" name="designation"> </input>
