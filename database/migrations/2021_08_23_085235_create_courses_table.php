@@ -17,6 +17,7 @@ class CreateCoursesTable extends Migration
             $table->id();
             $table->integer('course_category_id');
             $table->integer('main_category_id');
+            $table->integer('trainer_id')->nullable();
             $table->string('course_image');
             $table->string('course_title');
             $table->integer('regular_price');

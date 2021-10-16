@@ -13,6 +13,7 @@ use App\Models\Lesson;
 use App\Models\UserEnrollment;
 use Auth;
 use App\Models\CourseReview;
+use App\Models\Trainer;
 
 
 class CourseController extends Controller
@@ -26,16 +27,18 @@ class CourseController extends Controller
     $main_categories= MainCategory::all();
     $section= Section::all();
     $lessons= Lesson::all();
+    $trainer= Trainer::all();
 
 
-    return view('backend.pages.courses.manage',compact('course_categories','main_categories','courses','course_details','section','lessons'));
+
+    return view('backend.pages.courses.manage',compact('course_categories','main_categories','courses','course_details','section','lessons','trainer'));
   }
 
   public function StoreCourse(Request $request)
   {
     $main_category_id = $request->main_category_id;
     $course_category_id = $request->course_category_id;
-
+    $trainer_id=$request->trainer_id;
 
     $course_title=$request->course_title;
     $regular_price=$request->regular_price;
@@ -61,6 +64,7 @@ class CourseController extends Controller
     $course = new Course();
     $course->main_category_id = $main_category_id;
     $course->course_category_id =$course_category_id;
+    $course->trainer_id=$trainer_id;
 
     $course->course_title=$course_title;
     $course->regular_price=$regular_price;
@@ -87,6 +91,7 @@ class CourseController extends Controller
   {
     $main_category_id = $request->main_category_id;
     $course_category_id= $request->course_category_id;
+    $trainer_id=$request->trainer_id;
 
     $course_title=$request->course_title;
     $regular_price= $request->regular_price;
@@ -132,6 +137,7 @@ class CourseController extends Controller
     $course = Course::find($request->id);
     $course->main_category_id = $main_category_id;
     $course->course_category_id= $course_category_id;
+    $course->trainer_id=$trainer_id;
 
     $course->course_title= $course_title;
     $course->regular_price= $regular_price;
@@ -312,7 +318,7 @@ class CourseController extends Controller
     $course_details= CourseOverview::where('course_id',$id)->get();
     //$sections= Section::where('course_id',$id)->get();
     //$lessons= Lesson::where('course_id',$id)->get();
-    $course= Course::with(['sections.lessons'])->where('id',$id)->first();
+    $course= Course::with(['sections.lessons'])->where('id',$id)->first(); 
 
 
     $enrolled= UserEnrollment::where('user_id',Auth::id())->where('course_id',$id)->first();
@@ -322,7 +328,10 @@ class CourseController extends Controller
 
 
 
-    return view('/backend/pages/courses.course_details_index',compact('course_details','main_categories','course_categories','course','enrolled','courseReview','avgRating'));
+    $trainer= Trainer::where('id',$id+1)->get();
+
+
+    return view('/backend/pages/courses.course_details_index',compact('course_details','main_categories','course_categories','course','enrolled','courseReview','avgRating','trainer'));
   }
 
   public function StoreSection(Request $request)

@@ -8,6 +8,7 @@ use App\Models\MainCategory;
 use App\Models\CourseCategory;
 use App\Models\CourseOverview;
 use App\Models\Section;
+use App\Models\Trainer;
 
 class Course extends Model
 {
@@ -54,5 +55,9 @@ class Course extends Model
             return false;
         }
     }
+    public function trainer(){
+
+      return $this->belongsTo(Trainer::class,'trainer_id');
+     }
 
 }

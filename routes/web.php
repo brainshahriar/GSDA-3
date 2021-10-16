@@ -299,3 +299,5 @@ Route::post('/admin/home/updateTrainer', [TrainerController::class, 'updateTrain
 middleware('is_admin');
 Route::get('/admin/trainer-delete/{id}', [TrainerController::class,'deleteTrainer'])->middleware('is_admin');
 
+
+

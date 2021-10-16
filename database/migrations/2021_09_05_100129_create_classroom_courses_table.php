@@ -15,7 +15,7 @@ class CreateClassroomCoursesTable extends Migration
     {
         Schema::create('classroom_courses', function (Blueprint $table) {
             $table->id();
-            $table->integer('course_category_id');
+            $table->integer('course_category_id'); 
             $table->integer('main_category_id');
             $table->string('classroom_course_image');
             $table->string('classroom_course_title');
