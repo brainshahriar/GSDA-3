@@ -1,4 +1,4 @@
-<div class="modal fade" id="TrainerAdd" tabindex="-1" role="dialog" aria-labelledby="BlogsAddModal" aria-hidden="true">
+<div class="modal fade" id="ClassroomTrainerAdd" tabindex="-1" role="dialog" aria-labelledby="BlogsAddModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -8,7 +8,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="{{route('add-trainer')}}" method="POST" enctype="multipart/form-data">
+          <form action="{{route('add-trainer1')}}" method="POST" enctype="multipart/form-data">
             @csrf
               <div class="form-group">
                 <label for="classroom_course_title" >Name</label>
@@ -18,10 +18,10 @@
      
               <div class="form-group">
                 <label for="custom select">Select Course</label>
-                <select class="form-control" name="course_id">
+                <select class="form-control" name="classroom_course_id">
                   <option label="Choose Course"></option>
-                  <?php foreach ($course as $item): ?>
-                    <option value="{{$item->id}}">{{$item->course_title}}</option>
+                  <?php foreach ($classroom_course as $item): ?>
+                    <option value="{{$item->id}}">{{$item->classroom_course_title}}</option>
                   <?php endforeach; ?>
 
 

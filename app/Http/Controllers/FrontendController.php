@@ -10,6 +10,7 @@ use App\Models\ClassroomCourse;
 use App\Models\ClassroomInfo;
 use App\Models\User;
 use App\Models\CourseReview;
+use App\Models\ClassroomTrainer;
 
 class FrontendController extends Controller
 {
@@ -51,8 +52,9 @@ class FrontendController extends Controller
     $courseReview=CourseReview::with('user')->where('classroomcourse_id',$id)->where('status','approve')->latest()->get();
     $rating = CourseReview::where('classroomcourse_id',$id)->where('status','approve')->avg('rating');
     $avgRating = number_format($rating,1);
+    $trainer=ClassroomTrainer::where('classroom_course_id',$id)->get();
 
-    return view('frontend.pages.classroom_course_details',compact('course_categories','main_categories','classroom_course_details','classroom_course','courseReview','avgRating'));
+    return view('frontend.pages.classroom_course_details',compact('course_categories','main_categories','classroom_course_details','classroom_course','courseReview','avgRating','trainer'));
   }
   public function classroom_course_booking($id)
   {

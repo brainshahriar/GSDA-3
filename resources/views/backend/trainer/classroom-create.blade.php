@@ -6,7 +6,7 @@
 
 <div class="container-fluid">
   <div class="db-breadcrumb">
-    <h4 class="breadcrumb-title">Trainer List</h4>
+    <h4 class="breadcrumb-title">Classroom Trainer List</h4>
     <ul class="db-breadcrumb-list">
       <li><a href="{{route('admin.home')}}"><i class="fa fa-home"></i>Home</a></li>
       <li>Trainer</li>
@@ -19,9 +19,9 @@
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-            <h4 class="card-title">E-Learning Trainer</h4>
-            <a href="#" class="btn btn-primary float-right" data-toggle="modal" data-target="#TrainerAdd"><i class="fas fa-plus-circle"></i></a>
-            @include('backend.modals.traineraddmodal')
+            <h4 class="card-title">Trainer</h4>
+            <a href="#" class="btn btn-primary float-right" data-toggle="modal" data-target="#ClassroomTrainerAdd"><i class="fas fa-plus-circle"></i></a>
+            @include('backend.modals.classroomtraineraddmodal')
           </div
 
         
@@ -51,7 +51,7 @@
 
                 </td>
                 <td>
-                  {{ $row->course->course_title }}
+                  {{ $row->classroom_course->classroom_course_title }}
                 </td>
 
                 <td>
@@ -90,12 +90,12 @@
                 </td>
 
                 <td>
-                    <a href="#" data-toggle="modal" data-target="#TrainerEdit{{$row->id}}"><i class="fas fa-edit"></i></a>
+                    <a href="#" data-toggle="modal" data-target="#ClassroomTrainerEditModal{{$row->id}}"><i class="fas fa-edit"></i></a>
                     
-                  <a  href="/admin/trainer-delete/{{$row->id}}" id="delete"><i class="fas fa-trash"></i></a>
+                  <a  href="/admin/classroom-trainer-delete/{{$row->id}}" id="delete"><i class="fas fa-trash"></i></a>
                  
                 </td>
-                @include('backend.modals.trainereditmodal') 
+                 @include('backend.modals.classroomtrainereditmodal')
   
 
               </tr>

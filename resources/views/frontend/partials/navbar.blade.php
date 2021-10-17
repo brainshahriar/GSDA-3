@@ -3,7 +3,7 @@
             <div class="container clearfix">
       <!-- Header Logo ==== -->
       <div class="menu-logo">
-        <a href="{{route('home')}}"><img src="{{ asset('images/only logo.png')}}" alt=""></a>
+        <a href="{{route('home')}}"><img src="{{ asset('images/logo.gif')}}" alt="" ></a>
       </div>
       <!-- Mobile Nav Button ==== -->
 

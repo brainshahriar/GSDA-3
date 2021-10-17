@@ -99,7 +99,7 @@
               <ul class="navbar">
                 <li><a class="nav-link" href="#overview"><i class="ti-zip"></i>Course Description</a></li>
                 <li><a class="nav-link" href="#curriculum"><i class="ti-bookmark-alt"></i>Exam Format</a></li>
-              <!--  <li><a class="nav-link" href="#instructor"><i class="ti-user"></i>Instructor</a></li>-->
+                <li><a class="nav-link" href="#instructor"><i class="ti-user"></i>Instructor</a></li>
                 <li><a class="nav-link" href="#reviews"><i class="ti-comments"></i>Reviews</a></li>
               </ul>
             </div>
@@ -153,41 +153,29 @@
 
             </ul>
           </div>
-        <!--  <div class="" id="instructor">
+   
+          <div class="" id="instructor">
             <h4>Instructor</h4>
+  
+            @foreach ($trainer as $item)
+
             <div class="instructor-bx">
               <div class="instructor-author">
-                <img src="{{ asset('images/testimonials/pic1.jpg')}}" alt="">
+                <img src=""{{asset('storage/trainer/'.$item->image)}}"" alt="">
               </div>
               <div class="instructor-info">
-                <h6>Keny White </h6>
-                <span>Professor</span>
+                <h6>{{$item->name}}</h6>
+                <span>{{ $item->designation }}</span>
                 <ul class="list-inline m-tb10">
-                  <li><a href="#" class="btn sharp-sm facebook"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#" class="btn sharp-sm twitter"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#" class="btn sharp-sm linkedin"><i class="fa fa-linkedin"></i></a></li>
-                  <li><a href="#" class="btn sharp-sm google-plus"><i class="fa fa-google-plus"></i></a></li>
+                  <li><a href="{{ $item->facebook_profile }}" class="btn sharp-sm facebook"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="{{ $item->linkdin_profile }}" class="btn sharp-sm linkedin"><i class="fa fa-linkedin"></i></a></li>
                 </ul>
-                <p class="m-b0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                <p class="m-b0">{!! $item->biography !!}</p>
               </div>
             </div>
-            <div class="instructor-bx">
-              <div class="instructor-author">
-                <img src="{{ asset('images/testimonials/pic2.jpg')}}" alt="">
-              </div>
-              <div class="instructor-info">
-                <h6>Keny White </h6>
-                <span>Professor</span>
-                <ul class="list-inline m-tb10">
-                  <li><a href="#" class="btn sharp-sm facebook"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#" class="btn sharp-sm twitter"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#" class="btn sharp-sm linkedin"><i class="fa fa-linkedin"></i></a></li>
-                  <li><a href="#" class="btn sharp-sm google-plus"><i class="fa fa-google-plus"></i></a></li>
-                </ul>
-                <p class="m-b0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
-              </div>
-            </div>
-          </div>-->
+            @endforeach
+
+          </div>
           <div class="" id="reviews">
               <h4>Reviews</h4>
 

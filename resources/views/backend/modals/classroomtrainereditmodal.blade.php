@@ -1,27 +1,28 @@
-<div class="modal fade" id="TrainerAdd" tabindex="-1" role="dialog" aria-labelledby="BlogsAddModal" aria-hidden="true">
+<div class="modal fade" id="ClassroomTrainerEditModal{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="TrainerEditModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="BlogsAddModal">Add Trainer</h5>
+          <h5 class="modal-title" id="ClassroomTrainerEditModal{{$row->id}}">Edit Trainer</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <form action="{{route('add-trainer')}}" method="POST" enctype="multipart/form-data">
+          <form action="{{route('update-trainer1')}}" method="POST" enctype="multipart/form-data">
             @csrf
+            <input type="hidden" name="id" value="{{$row->id}}">
               <div class="form-group">
                 <label for="classroom_course_title" >Name</label>
-                <input data-validation="required" type="text" class="form-control" name="name" aria-describedby="name" placeholder="Enter Name">
+                <input data-validation="required" value="{{ $row->name }}" type="text" class="form-control" name="name" aria-describedby="name" placeholder="Enter Name">
   
               </div>
-     
               <div class="form-group">
                 <label for="custom select">Select Course</label>
-                <select class="form-control" name="course_id">
+                <select class="form-control" name="classroom_course_id">
                   <option label="Choose Course"></option>
-                  <?php foreach ($course as $item): ?>
-                    <option value="{{$item->id}}">{{$item->course_title}}</option>
+                  <?php foreach ($classroom_course as $item): ?>
+                    <option value="{{$item->id}}">{{$item->classroom_course_title}}</option>
+
                   <?php endforeach; ?>
 
 
@@ -32,30 +33,30 @@
               <div class="form-group">
                 <label class="col-form-label">Designation</label>
                 <div>
-                  <input  class="form-control" name="designation"> </input>
+                  <input  class="form-control" value="{{ $row->designation }}" name="designation"> </input>
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-form-label">Fb link</label>
                 <div>
-                  <input  class="form-control" name="facebook_profile"> </input>
+                  <input  class="form-control" name="facebook_profile" value="{{ $row->facebook_profile }}"> </input>
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-form-label">Linkdin link</label>
                 <div>
-                  <input  class="form-control" name="linkdin_profile"> </input>
+                  <input  class="form-control" name="linkdin_profile" value="{{ $row->linkdin_profile }}"> </input>
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-form-label">Biography</label>
                 <div>
-                  <textarea class="form-control" id="biography" name="biography"  > </textarea>
+                  <textarea class="form-control" id="bio" name="biography" value="{{ $row->biography }}" > </textarea>
                 </div>
               </div>
               <div class="form-group">
                   <label for="exampleFormControlFile1">Image</label>
-                    <input  type="file" name="file" class="form-control-file" id="image" onchange="previewImage(this)">
+                    <input  type="file" name="image" class="form-control-file" id="image" onchange="previewImage(this)">
                   </div>
                 
                   <div class="modal-footer">
@@ -66,8 +67,10 @@
       </div>
     </div>
   </div>
+  @push('scripts')
   <script>
     $(document).ready(function() {
-      $('#biography').summernote();
+      $('#bio').summernote();
     });
     </script>
+  @endpush

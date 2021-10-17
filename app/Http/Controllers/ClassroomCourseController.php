@@ -142,7 +142,7 @@ class ClassroomCourseController extends Controller
           'message'=>'Course record has been deleted successfully!!!',
           'alert-type'=>'error'
       );
-      return Redirect()->back()->with($notification);
+      return Redirect()->back()->with($notification); 
 
 
     }

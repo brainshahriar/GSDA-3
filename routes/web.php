@@ -291,7 +291,7 @@ Route::get('/admin/review-approve/{review_id}', [ReviewFromAdminController::clas
 
 //
 
-//trainer 
+//trainer e-learning
 Route::get('/admin/trainer-list', [TrainerController::class,'create'])->name('trainer')->middleware('is_admin');
 Route::post('/admin/home/addTrainer', [TrainerController::class, 'addTrainer'])->name('add-trainer')->
 middleware('is_admin');
@@ -300,4 +300,11 @@ middleware('is_admin');
 Route::get('/admin/trainer-delete/{id}', [TrainerController::class,'deleteTrainer'])->middleware('is_admin');
 
 
+//trainer classroom
+Route::get('/admin/classroom-trainer-list', [TrainerController::class,'create1'])->name('trainer-classroom')->middleware('is_admin');
+Route::post('/admin/home/classroom-addTrainer', [TrainerController::class, 'addTrainer1'])->name('add-trainer1')->
+middleware('is_admin');
+Route::post('/admin/home/classroom-updateTrainer', [TrainerController::class, 'updateTrainer1'])->name('update-trainer1')->
+middleware('is_admin');
+Route::get('/admin/classroom-trainer-delete/{id}', [TrainerController::class,'deleteTrainer1'])->middleware('is_admin');
 
