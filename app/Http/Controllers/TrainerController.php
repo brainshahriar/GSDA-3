@@ -20,6 +20,7 @@ class TrainerController extends Controller
         $name = $request->name;
         $designation = $request->designation;
         $course_id=$request->course_id;
+        $classroom_course_id=$request->classroom_course_id;
 
         $facebook_profile = $request->facebook_profile;
         $linkdin_profile = $request->linkdin_profile;
@@ -40,6 +41,7 @@ class TrainerController extends Controller
         $trainer->name = $name;
         $trainer->designation =$designation;
         $trainer->course_id=$course_id;
+        $trainer->classroom_course_id=$classroom_course_id;
         $trainer->facebook_profile = $facebook_profile;
         $trainer->linkdin_profile =$linkdin_profile;
         $trainer->biography = $biography;
@@ -56,7 +58,8 @@ class TrainerController extends Controller
     { 
         $trainer= Trainer::all();
         $course=Course::all();
-        return view('backend.trainer.create',compact('trainer','course'));
+        $classroom_course=ClassroomCourse::all();
+        return view('backend.trainer.create',compact('trainer','course','classroom_course'));
     }
     public function updateTrainer(Request $request)
     {

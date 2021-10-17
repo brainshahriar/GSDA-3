@@ -17,11 +17,24 @@
               </div>
      
               <div class="form-group">
-                <label for="custom select">Select Course</label>
+                <label for="custom select">Select E-Course</label>
                 <select class="form-control" name="course_id">
                   <option label="Choose Course"></option>
                   <?php foreach ($course as $item): ?>
                     <option value="{{$item->id}}">{{$item->course_title}}</option>
+                  <?php endforeach; ?>
+
+
+
+
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="custom select">Select Classroom-Course</label>
+                <select class="form-control" name="classroom_course_id">
+                  <option label="Choose Course"></option>
+                  <?php foreach ($classroom_course as $item): ?>
+                    <option value="{{$item->id}}">{{$item->classroom_course_title}}</option>
                   <?php endforeach; ?>
 
 

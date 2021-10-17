@@ -33,6 +33,7 @@
                 <th class="wd-10">Id</th>
                 <th>Name</th>
                 <th>Course</th>
+                <th>Classroom Course</th>
                 <th class="wd-10">Designation</th>
                 <th>Fb Link</th>
                 <th>Lindin Link</th>
@@ -42,7 +43,7 @@
               </tr>
             </thead>
             <tbody>
-              @foreach ($trainer as $row)
+              @forelse ($trainer as $row)
 
               <tr>
                 <td>{{$row->id}}</td>
@@ -52,6 +53,10 @@
                 </td>
                 <td>
                   {{ $row->course->course_title }}
+                </td>
+                
+                <td>
+                  {{ $row->classroom_course->classroom_course_title }}
                 </td>
 
                 <td>
