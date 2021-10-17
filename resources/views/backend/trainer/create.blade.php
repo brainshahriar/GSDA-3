@@ -51,7 +51,7 @@
 
                 </td>
                 <td>
-                 
+                  {{ $row->course->course_title }}
                 </td>
 
                 <td>

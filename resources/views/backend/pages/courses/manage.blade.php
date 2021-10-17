@@ -142,7 +142,6 @@
                   Course Id
                 </th>
                 <th>Course Title</th>
-                <th>Trainer</th>
                 <th>Images</th>
                 <th>Main Category</th>
                 <th>Course Category</th>
@@ -164,7 +163,6 @@
 
                   <span class="font-weight-bold">{{$row->course_title}}</span>
                 </td>
-                <td></td>
                 <td>
                   <div class="avatar-group">
                     <div

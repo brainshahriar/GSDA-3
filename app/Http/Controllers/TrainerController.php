@@ -7,7 +7,6 @@ use App\Models\Trainer;
 use App\Models\Course;
 use Validator;
 use Response;
-
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
 class TrainerController extends Controller
